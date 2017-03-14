@@ -1,0 +1,255 @@
+<?php 
+	include ('header.php');
+	?>
+	
+	<div id="main" class="wrapper style1">
+					<div class="container">
+							<section>
+								<h3>form</h3>
+								<form method="post" action="savereg.php" onSubmit="return chkinput(this)">
+									<div class="row uniform 50%">
+										<div class="6u 12u$(xsmall) join_form">
+											<input type="text" name="name" id="name" value="" placeholder="Name or nickname" />
+										</div>
+										<div class="8u 12u$(xsmall)"><!--6u$ (xsmall)  -->
+											<input type="email" name="email" id="email" value="" placeholder="Email" />
+										</div>
+
+
+										<div class="6u 12u$(xsmall)">
+											<input type="password" name="password" id="password" value="" placeholder="Password" />
+										</div>
+										<div class="6u 12u$(xsmall)">
+											<input type="password" name="passwords" id="repassword" value="" placeholder="Re-enter password">
+										</div>
+
+										<div class="6u$ 12u$(xsmall) 6u$  12u$(xsmall)">
+											
+										</div>
+										<div class="6u$ 12u$(xsmall)">
+											
+										</div>
+											
+										<div class="12u$">
+											<div class="select-wrapper">
+												<select name="category" id="category">
+													<option value="">- Category -</option>
+													<option value="1">Manufacturing</option>
+													<option value="1">Shipping</option>
+													<option value="1">Administration</option>
+													<option value="1">Human Resources</option>
+												</select>
+											</div>
+										</div>
+										<div class="4u 12u$(medium)">
+											<input type="radio" id="priority-low" name="priority" checked>
+											<label for="priority-low">Low Priority</label>
+										</div>
+										<div class="4u 12u$(medium)">
+											<input type="radio" id="priority-normal" name="priority">
+											<label for="priority-normal">Normal Priority</label>
+										</div>
+										<div class="4u$ 12u$(medium)">
+											<input type="radio" id="priority-high" name="priority">
+											<label for="priority-high">High Priority</label>
+										</div>
+										<div class="6u 12u$(medium)">
+											<input type="checkbox" id="copy" name="copy">
+											<label for="copy">Email me a copy of this message</label>
+										</div>
+										<div class="6u$ 12u$(medium)">
+											<input type="checkbox" id="human" name="human" checked>
+											<label for="human">I am a human and not a robot</label>
+										</div>
+										<div class="12u$">
+											<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+										</div>
+										<div class="12u$">
+											<ul class="actions">
+												<li><input type="submit" value="Send Message" class="special" /></li>
+												<li><input type="reset" value="Reset" /></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+							</section>
+
+			
+			 <script language="javascript">
+			 
+			   function chkinput(form){				//定义一个函数
+			    
+				 if(form.usernc.value==""){				//判断usernc文本框中的值是否为空
+				   alert("请输入用户昵称！");   		//如果为空则输出“请输入用户昵称”
+				   form.usernc.focus();					//返回到tel文本框
+				   return(false);
+				 }
+				 
+				 if(form.userpwd.value==""){
+				 
+				   alert("请输入注册密码！");   
+				   form.userpwd.focus();
+				   return(false);
+				 
+				 }
+				 
+				  if(form.userpwd1.value==""){
+				 
+				   alert("请输入重复密码！");   
+				   form.userpwd1.focus();
+				   return(false);
+				 
+				 }
+				 if(form.userpwd.value!=form.userpwd1.value){
+				 
+				   alert("密码与确认密码不同！");   
+				   form.userpwd.focus();
+				   return(false); 
+				 
+				 }
+				 
+				 if(form.userpwd.value.length<6){
+				 
+				   alert("密码长度应大于6位！");   
+				   form.userpwd.focus();
+				   return(false); 
+				 
+				 }
+				 
+				 if(form.truename.value==""){
+				   alert("请输入真实姓名！");
+				   form.truename.focus();
+				   return(false);
+				 }
+				 if(form.sex.value==""){
+				   alert("请选择性别！");
+				   form.sex.focus();
+				   return(false);
+				 }
+				 
+				 if(form.email.value==""){
+	               alert("请输入E-mail地址!");
+	               form.email.focus();
+	               return(false);
+	             }
+				
+	             var i=form.email.value.indexOf("@");
+	             var j=form.email.value.indexOf(".");
+	             if((i<0)||(i-j>0)||(j<0)){
+                   alert("请输入正确的E-mail地址!");
+	               form.email.select();
+	               return(false);
+	             }
+				 
+				 if(form.tel.value==""){
+				   alert("请输入联系电话！");
+				   form.tel.focus();
+				   return(false);
+				 } 
+				 
+				 if(isNaN(form.tel.value)){
+				   alert("联系电话只能为数字！");
+				   form.tel.focus();
+				   return(false);
+				 }
+				 
+				 if(form.qq.value==""){
+				   alert("请输入联系QQ！");
+				   form.qq.focus();
+				   return(false);
+				 } 
+				 
+				 if(isNaN(form.qq.value)){
+				   alert("QQ只能为数字！");
+				   form.qq.focus();
+				   return(false);
+				 }
+				 
+				 
+
+			     if(form.address.value==""){
+				   alert("请输入联系地址！");
+				   form.address.focus();
+				   return(false);
+				 } 
+			  
+			    return(true);							//提交表单
+			     
+			   }
+			  
+			  </script>
+			<!-- 
+			form name="form1" method="post" action="savereg.php" onSubmit="return chkinput(this)">
+			    <tr>
+                  <td width="110" height="30"><div align="center">Username：</div></td>
+                  <td height="30" colspan="2">&nbsp;
+                      <input type="text" name="usernc" size="25" class="inputcss"></td>
+                </tr>
+				 <tr>
+                  <td width="110" height="30"><div align="center">Password：</div></td>
+                  <td height="30" colspan="2">&nbsp;
+                      <input type="password" name="userpwd" size="25" class="inputcss"></td>
+                </tr>
+				 <tr>
+                  <td width="110" height="30"><div align="center">Repeat Password：</div></td>
+                  <td height="30" colspan="2">&nbsp;
+                      <input type="password" name="userpwd1" size="25" class="inputcss"></td>
+                </tr>
+                <tr>
+                  <td height="30"><div align="center">Real Name：</div></td>
+                  <td height="30" colspan="2">&nbsp;
+                      <input type="text" name="truename" size="25" class="inputcss"></td>
+                </tr>
+                <tr>
+                  <td height="30"><div align="center">Sex：</div></td>
+                  <td height="30" colspan="2">&nbsp;
+                      <select name="sex">
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                      </select>                  </td>
+                </tr>
+                <tr>
+                  <td height="30"><div align="center">Email：</div></td>
+                  <td height="30" colspan="2">&nbsp;
+                      <input type="text" name="email" size="25" class="inputcss"></td>
+                </tr>
+                <tr>
+                  <td height="30"><div align="center">Mobile：</div></td>
+                  <td height="30" colspan="2">&nbsp;
+                      <input type="text" name="tel" size="25" class="inputcss"></td>
+                </tr>
+                <!--tr>
+                  <td height="30"><div align="center">QQ号码：</div></td>
+                  <td height="30" colspan="2">&nbsp;
+                      <input type="text" name="qq" size="25" class="inputcss"></td>
+                </tr>
+                <tr>
+                  <td height="30"><div align="center">Profile Picture：</div></td>
+                  <td width="90" height="30">&nbsp;
+				  		<input type="file" name="FaceImg" class=""></td>
+                </tr>
+                <tr>
+                  <td height="45" colspan="3"><div align="center">
+                    <input name="submit" type="submit" class="buttoncss" value="Join Now">
+                    &nbsp;&nbsp;&nbsp;
+                    <input name="reset" type="reset" class="buttoncss" value="Reset">
+                  </div></td>
+                </tr>
+		      </form>
+				
+            </table></td>
+        </tr>
+      </table></td>
+    <td width="5" bgcolor="#FAF3CE"></td>
+  </tr>
+</table>
+</td>
+  </tr>
+</table -->
+</div>
+</div>
+<?php 
+	include ("footer.php"); 
+	?>
