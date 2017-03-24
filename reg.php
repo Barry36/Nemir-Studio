@@ -1,35 +1,74 @@
 <?php 
 	include ('header.php');
 	?>
-	
-	<div id="main" class="wrapper style1">
-					<div class="container">
+	<!--script type="text/javascript">
+		function chkinput(form){				//define a function		
+			   	 if(form.email.value==""){				// check eamil
+	               alert("Please Enter Your E-mail!");
+	               form.email.focus();
+	               return(false);
+	             }		 
+				 if(form.userpwd.value==""){            // check password
+				 
+				   alert("Please Enter Password!");   
+				   form.userpwd.focus();
+				   return(false);
+				} 
+				 if(form.userpwd.value.length<6){		// check password length
+				 
+				   alert("Password length should be more than six!");   
+				   form.userpwd.focus();
+				   return(false); 
+				 
+				 } 
+				 
+				
+	             var i=form.email.value.indexOf("@");
+	             var j=form.email.value.indexOf(".");
+	             if((i<0)||(i-j>0)||(j<0)){				// check password validity
+                   alert("Please Enter a valid E-mail");
+	               form.email.select();
+	               return(false);
+	             }
+	             if(form.first_name.value==""){				// check first name
+	               alert("Please Enter Your First_Name!");
+	               form.first_name.focus();
+	               return(false);
+	             }
+	             if(form.last_name.value==""){				// check first name
+	             alert("Please Enter Your Last_Name!");
+	             form.last_name.focus();
+	             return(false);
+	             }				 			  
+			    return(true);							//submit form
+			     
+			   }
+	</script-->
+	<div id="main" class="wrapper style1 bg_phone">
+					<div class="container" >
 							<section>
-								<h3>form</h3>
+								<div class="8u 12u$(xsmall)">
+								<h3>Colorful Campus Life is Awaiting You</h3>
+								</div>
 								<form method="post" action="savereg.php" onSubmit="return chkinput(this)">
-									<div class="row uniform 50%">
-										<div class="6u 12u$(xsmall) join_form">
-											<input type="text" name="name" id="name" value="" placeholder="Name or nickname" />
+									<div class="row uniform 50%" >
+										<div class="8u 12u$(xsmall)">
+											<input type="email" name="email" id="email" value="" placeholder="Your Email" />
 										</div>
-										<div class="8u 12u$(xsmall)"><!--6u$ (xsmall)  -->
-											<input type="email" name="email" id="email" value="" placeholder="Email" />
+										<div class="8u$ 12u$(xsmall)">
+											<input type="password" name="userpwd" id="" value="" placeholder="Enter Your Password" />
 										</div>
-
-
-										<div class="6u 12u$(xsmall)">
-											<input type="password" name="password" id="password" value="" placeholder="Password" />
+										<div class="8u$ 12u$(xsmall) ">
+											<input type="text" name="first_name" id="" value="" placeholder="First Name" />
 										</div>
-										<div class="6u 12u$(xsmall)">
-											<input type="password" name="passwords" id="repassword" value="" placeholder="Re-enter password">
+										<div class="8u$ 12u$(xsmall) ">
+											<input type="text" name="last_name" id="" value="" placeholder="Last Name" />
 										</div>
-
-										<div class="6u$ 12u$(xsmall) 6u$  12u$(xsmall)">
-											
+										<div class="10u$ 12u$(xsmall)">
+											<!-- ul class="actions"></ul -->
+											<input type="submit" name="submit" class="special try" value="Join Now">
 										</div>
-										<div class="6u$ 12u$(xsmall)">
-											
-										</div>
-											
+										<!-- This is a pull down list template>	
 										<div class="12u$">
 											<div class="select-wrapper">
 												<select name="category" id="category">
@@ -40,7 +79,9 @@
 													<option value="1">Human Resources</option>
 												</select>
 											</div>
-										</div>
+										</div 			-->
+
+										<!-- This is a radio button template
 										<div class="4u 12u$(medium)">
 											<input type="radio" id="priority-low" name="priority" checked>
 											<label for="priority-low">Low Priority</label>
@@ -52,7 +93,9 @@
 										<div class="4u$ 12u$(medium)">
 											<input type="radio" id="priority-high" name="priority">
 											<label for="priority-high">High Priority</label>
-										</div>
+										</div           -->
+
+										<!-- This is a check box template
 										<div class="6u 12u$(medium)">
 											<input type="checkbox" id="copy" name="copy">
 											<label for="copy">Email me a copy of this message</label>
@@ -60,124 +103,27 @@
 										<div class="6u$ 12u$(medium)">
 											<input type="checkbox" id="human" name="human" checked>
 											<label for="human">I am a human and not a robot</label>
-										</div>
+										</div                -->
+
+
+										<!-- This is a notepad template
 										<div class="12u$">
 											<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
-										</div>
+										</div                -->
+
+										<!-- This is a button template
 										<div class="12u$">
 											<ul class="actions">
 												<li><input type="submit" value="Send Message" class="special" /></li>
 												<li><input type="reset" value="Reset" /></li>
 											</ul>
-										</div>
+										</div-->
 									</div>
 								</form>
 							</section>
 
 			
-			 <script language="javascript">
 			 
-			   function chkinput(form){				//定义一个函数
-			    
-				 if(form.usernc.value==""){				//判断usernc文本框中的值是否为空
-				   alert("请输入用户昵称！");   		//如果为空则输出“请输入用户昵称”
-				   form.usernc.focus();					//返回到tel文本框
-				   return(false);
-				 }
-				 
-				 if(form.userpwd.value==""){
-				 
-				   alert("请输入注册密码！");   
-				   form.userpwd.focus();
-				   return(false);
-				 
-				 }
-				 
-				  if(form.userpwd1.value==""){
-				 
-				   alert("请输入重复密码！");   
-				   form.userpwd1.focus();
-				   return(false);
-				 
-				 }
-				 if(form.userpwd.value!=form.userpwd1.value){
-				 
-				   alert("密码与确认密码不同！");   
-				   form.userpwd.focus();
-				   return(false); 
-				 
-				 }
-				 
-				 if(form.userpwd.value.length<6){
-				 
-				   alert("密码长度应大于6位！");   
-				   form.userpwd.focus();
-				   return(false); 
-				 
-				 }
-				 
-				 if(form.truename.value==""){
-				   alert("请输入真实姓名！");
-				   form.truename.focus();
-				   return(false);
-				 }
-				 if(form.sex.value==""){
-				   alert("请选择性别！");
-				   form.sex.focus();
-				   return(false);
-				 }
-				 
-				 if(form.email.value==""){
-	               alert("请输入E-mail地址!");
-	               form.email.focus();
-	               return(false);
-	             }
-				
-	             var i=form.email.value.indexOf("@");
-	             var j=form.email.value.indexOf(".");
-	             if((i<0)||(i-j>0)||(j<0)){
-                   alert("请输入正确的E-mail地址!");
-	               form.email.select();
-	               return(false);
-	             }
-				 
-				 if(form.tel.value==""){
-				   alert("请输入联系电话！");
-				   form.tel.focus();
-				   return(false);
-				 } 
-				 
-				 if(isNaN(form.tel.value)){
-				   alert("联系电话只能为数字！");
-				   form.tel.focus();
-				   return(false);
-				 }
-				 
-				 if(form.qq.value==""){
-				   alert("请输入联系QQ！");
-				   form.qq.focus();
-				   return(false);
-				 } 
-				 
-				 if(isNaN(form.qq.value)){
-				   alert("QQ只能为数字！");
-				   form.qq.focus();
-				   return(false);
-				 }
-				 
-				 
-
-			     if(form.address.value==""){
-				   alert("请输入联系地址！");
-				   form.address.focus();
-				   return(false);
-				 } 
-			  
-			    return(true);							//提交表单
-			     
-			   }
-			  
-			  </script>
 			<!-- 
 			form name="form1" method="post" action="savereg.php" onSubmit="return chkinput(this)">
 			    <tr>
